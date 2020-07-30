@@ -1,9 +1,9 @@
 # laravel-all-countries-model
 This script allows you to create a model with all countries and country details such as capital, zip, currency, language, etc by just copying this script and putting it in your countries model file in laravel. NB: Remember to change &lt;your model name> to your actual model name in your project to make it work. Also it uses uuid but you could change it to suit your project.. Enjoy!
 
-        //Insert Data Into The Database
         
-        public function up()
+        
+    public function up()
     {
         Schema::create('<your model name here>', function (Blueprint $table) {
             $table->uuid('id')->primary();
@@ -24,6 +24,8 @@ This script allows you to create a model with all countries and country details 
             $table->integer('geoname_id')->nullable();
             $table->timestamps();
         });
+        
+        //Insert Data Into The Database
         CcCountry::create(['country_code'=>'AD','country_name'=>'Andorra','currency_code'=>'EUR','fips_code'=>'AN','iso_numeric'=>'020','north'=>'42.65604389629997','south'=>'42.42849259876837','east'=>'1.7865427778319827','west'=>'1.4071867141112762','capital'=>'Andorra la Vella','continent_name'=>'Europe','continent'=>'EU','languages'=>'ca','iso_alpha3'=>'AND','geoname_id'=>'3041565']);
         CcCountry::create(['country_code'=>'AE','country_name'=>'United Arab Emirates','currency_code'=>'AED','fips_code'=>'AE','iso_numeric'=>'784','north'=>'26.08415985107422','south'=>'22.633329391479492','east'=>'56.38166046142578','west'=>'51.58332824707031','capital'=>'Abu Dhabi','continent_name'=>'Asia','continent'=>'AS','languages'=>'ar-AE,fa,en,hi,ur','iso_alpha3'=>'ARE','geoname_id'=>'290557']);
         CcCountry::create(['country_code'=>'AF','country_name'=>'Afghanistan','currency_code'=>'AFN','fips_code'=>'AF','iso_numeric'=>'004','north'=>'38.483418','south'=>'29.377472','east'=>'74.879448','west'=>'60.478443','capital'=>'Kabul','continent_name'=>'Asia','continent'=>'AS','languages'=>'fa-AF,ps,uz-AF,tk','iso_alpha3'=>'AFG','geoname_id'=>'1149361']);
